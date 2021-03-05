@@ -1,0 +1,53 @@
+.about {
+  @include justify-box(flex-start, center);
+  position: relative;
+  padding-top: 9.875rem;
+
+  &__img {
+    width: 45.75rem;
+    height: 31rem;
+  }
+
+  &__text {
+    width: 55%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    padding: 5% 10.25rem 10% 6.375rem;
+    background: $white;
+  }
+
+  &__description{
+      margin-top: 2.75rem;
+      font-size: $f-xsm;
+      font-family: 'Alata', sans-serif;
+      line-height: 1.8;
+      color: $darkGray;
+  }
+
+  @include breakpoint-down(medium){
+    justify-content: center;
+    flex-direction: column;
+
+    &__img{
+        width: 100%;
+        height: fit-content;
+    }
+
+    &__text{
+        position: relative;
+        width: 100%;
+        padding: 0;
+        padding-top: 5rem;
+    }
+
+    &__title, &__description{
+        text-align: center;
+    }
+
+    &__description{
+        font-size: $f-sm;
+    }
+}
+}

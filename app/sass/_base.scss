@@ -1,0 +1,76 @@
+// Colors
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$darkGray: hsl(0, 0%, 55%);
+$veryDarkGray: hsl(0, 0%, 41%);
+
+$f-xsm: 0.75rem;
+$f-sm: 0.9375rem;
+$f-med: 1.75rem;
+$f-lg: 2.125rem;
+$f-xlg: 3.25rem;
+
+//Breakpoints
+
+// 640px, 1024px, 1400px
+$breakpoints-up: (
+  "xsmall": "450px",
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "87.5em",
+);
+
+// 639px, 1023px, 1399px
+$breakpoints-down: (
+  "xsmall": "450px",
+  "small": "39.9375em",
+  "medium": "63.9375em",
+  "large": "87.4375em",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+//justify with align
+@mixin justify-box($val, $aival) {
+  display: flex;
+  justify-content: $val;
+  align-items: $aival;
+}
+
+//animations
+.fadeIn {
+  pointer-events: all !important;
+  animation: fade-in 300ms ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  animation: fade-out 300ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
